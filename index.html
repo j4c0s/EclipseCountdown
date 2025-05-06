@@ -437,6 +437,14 @@
 </div>
 
 <script>
+// Service Worker Registration
+if('serviceWorker' in navigator){
+  const c=`const c="e-v1";self.addEventListener("install",e=>{e.waitUntil(caches.open(c).then(c=>c.addAll(["/","/index.html"])))});self.addEventListener("fetch",e=>{e.respondWith(caches.match(e.request).then(n=>n||fetch(e.request).then(n=>{if(!n||200!==n.status||"basic"!==n.type)return n;let t=n.clone();return caches.open(c).then(c=>{c.put(e.request,t)}),n})))});self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(e=>Promise.all(e.map(e=>{if(e!==c)return caches.delete(e)}))))});`;
+  const b=new Blob([c],{type:'text/javascript'});
+  const u=URL.createObjectURL(b);
+  navigator.serviceWorker.register(u).catch(e=>console.error(e));
+}
+
 let eclipseDate = new Date('2026-08-12T18:29:46Z');
 let locationName = "Ontalvilla de Almazán";
 let currentLanguage = "en";
