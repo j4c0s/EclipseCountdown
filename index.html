@@ -432,7 +432,7 @@
 	</div>
 	<div class="location-info" id="locationInfo">
 	  <div class="location-label" id="locationLabel">Location:</div>
-	  <div class="location-name" id="locationName">Ontalvilla de Almazán</div>
+	  <div class="location-name" id="locationName">Cascante</div>
 	</div>
 </div>
 
@@ -687,7 +687,7 @@ function updateEclipseDateFromInput() {
 }
 
 function setDefaultDateTimeValues() {
-	const defaultDate = new Date('2026-08-12T18:29:46Z');
+	const defaultDate = new Date('2026-08-12T18:28:41Z');
 	
 	const year = defaultDate.getFullYear();
 	const month = String(defaultDate.getMonth() + 1).padStart(2, '0');
@@ -700,7 +700,7 @@ function setDefaultDateTimeValues() {
 	document.getElementById('eclipseTimeHours').value = hours;
 	document.getElementById('eclipseTimeMinutes').value = minutes;
 	document.getElementById('eclipseTimeSeconds').value = seconds;
-	document.getElementById('customLocation').value = "Ontalvilla de Almazán";
+	document.getElementById('customLocation').value = "Cascante";
 }
 
 function loadSettings() {
@@ -739,7 +739,7 @@ function loadSettings() {
 		document.getElementById('customLocation').value = savedLocation;
 		document.getElementById('locationSelect').value = "custom";
 	} else {
-		locationName = "Ontalvilla de Almazán";
+		locationName = "Cascante";
 		document.getElementById('customLocation').value = locationName;
 	}
 
